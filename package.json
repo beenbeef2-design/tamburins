@@ -1,0 +1,13 @@
+{
+  "name": "tamburins-kiosk",
+  "version": "1.0.0",
+  "description": "Tamburins Perfume Kiosk Page",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Build successful'",
+    "start": "serve -s . -l $PORT"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
