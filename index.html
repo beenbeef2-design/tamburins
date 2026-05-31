@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAMBURINS KIOSK</title>
+  
+  <!-- Google Fonts for Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Montserrat:wght@200;300;400;500;600&family=Noto+Sans+KR:wght@200;300;400;500&family=Noto+Sans+JP:wght@200;300;400;500&family=Noto+Sans+SC:wght@200;300;400;500&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Cursor for Premium Interactive Feel -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Ambient Cinematic Background (Simulating Kiosk Environment) -->
+  <div class="ambient-background">
+    <div class="ambient-glow"></div>
+  </div>
+
+  <!-- Sleek Kiosk Body Simulator (16:9 ratio) -->
+  <div class="kiosk-frame">
+    <div class="kiosk-screen">
+      
+      <!-- SCREEN 1: LOGIN & SIGN UP -->
+      <div id="screen-login" class="screen-view active">
+        <div class="kiosk-container">
+          
+          <!-- Left Side: Cinematic Brand Showcase -->
+          <div class="showcase-panel">
+            <div class="showcase-bg-wrapper">
+              <div class="showcase-bg" style="background-image: url('chamo.png');"></div>
+              <div class="showcase-overlay"></div>
+            </div>
+            
+            <div class="brand-info">
+              <div class="brand-logo-container">
+                <span class="brand-logo">TAMBURINS</span>
+              </div>
+              <div class="brand-tagline-container">
+                <p class="brand-tagline text-transition" data-i18n="tagline">
+                  익숙함에서 오는 낯설음, 탬버린즈가 제안하는 새로운 향의 세계를 경험해보세요.
+                </p>
+              </div>
+            </div>
+
+            <div class="showcase-footer">
+              <span class="collection-year">© 2026 TAMBURINS. ALL RIGHTS RESERVED.</span>
+            </div>
+          </div>
+          
+          <!-- Right Side: Interaction Form (Login/Sign Up/Lang) -->
+          <div class="form-panel">
+            
+            <!-- Top Bar: Multi-language Selectors -->
+            <div class="lang-selector-bar">
+              <button class="lang-btn active" data-lang="ko">한국어</button>
+              <button class="lang-btn" data-lang="en">ENGLISH</button>
+              <button class="lang-btn" data-lang="zh">中文</button>
+              <button class="lang-btn" data-lang="ja">日本語</button>
+            </div>
+
+            <!-- Form Content Container -->
+            <div class="form-content-wrapper text-transition">
+              
+              <div class="form-header">
+                <h1 class="form-title" data-i18n="title">로그인</h1>
+                <p class="form-subtitle" data-i18n="subtitle">탬버린즈 키오스크 서비스 이용을 위해 로그인해 주세요.</p>
+              </div>
+
+              <!-- Login Form -->
+              <form id="kiosk-login-form" class="kiosk-form" onsubmit="event.preventDefault();">
+                <div class="input-group">
+                  <input type="text" id="input-username" required autocomplete="off">
+                  <label for="input-username" data-i18n="username_label">이메일 또는 휴대폰 번호</label>
+                  <div class="input-line"></div>
+                </div>
+                
+                <div class="input-group">
+                  <input type="password" id="input-password" required autocomplete="off">
+                  <label for="input-password" data-i18n="password_label">비밀번호</label>
+                  <div class="input-line"></div>
+                  <button type="button" class="password-toggle" aria-label="Toggle Password Visibility">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="eye-icon">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Find Credentials Link -->
+                <div class="form-actions-link">
+                  <a href="#" class="find-link" data-i18n="find_credentials">아이디/비밀번호 찾기</a>
+                </div>
+
+                <!-- Button Container -->
+                <div class="button-container">
+                  <button type="submit" class="btn btn-primary" id="btn-login">
+                    <span class="btn-text" data-i18n="btn_login">로그인</span>
+                    <div class="btn-glow"></div>
+                  </button>
+                  <button type="button" class="btn btn-secondary" id="btn-signup">
+                    <span class="btn-text" data-i18n="btn_signup">회원가입</span>
+                  </button>
+                </div>
+              </form>
+
+              <!-- Divider or Guest Checkout Option -->
+              <div class="guest-container">
+                <div class="divider">
+                  <span>OR</span>
+                </div>
+                <button type="button" class="btn btn-guest" id="btn-guest">
+                  <span class="btn-text" data-i18n="btn_guest">비회원 시작하기</span>
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SCREEN 2: PRODUCT DISCOVERY & SHOPPING -->
+      <div id="screen-shop" class="screen-view">
+        <div class="shop-container">
+          
+          <!-- Left Panel: Perfume Focus Display -->
+          <div class="shop-display-panel">
+            <div class="shop-bg-wrapper">
+              <div class="shop-bg" id="shop-perfume-bg" style="background-image: url('chamo.png');"></div>
+              <div class="shop-overlay"></div>
+            </div>
+            
+            <!-- Navigation Back -->
+            <button class="back-btn" id="btn-back-to-login">
+              <span class="back-arrow">←</span>
+              <span class="back-text" data-i18n="btn_back">이전으로</span>
+            </button>
+
+            <!-- Active Perfume Details -->
+            <div class="perfume-detail text-transition">
+              <h2 class="perfume-name-large" id="shop-perfume-title">CHAMO</h2>
+              <p class="perfume-description-large" id="shop-perfume-desc">
+                진한 리치, 부드러운 카모마일 향에 달콤한 마지판과 씁쓸한 머스크가 어우러져 깊고 포근한 자연의 위안을 건넵니다.
+              </p>
+              
+              <!-- Fragrance Notes Grid -->
+              <div class="notes-container">
+                <div class="note-row">
+                  <span class="note-type">TOP</span>
+                  <span class="note-value" id="note-top">Thyme, Chamomile</span>
+                </div>
+                <div class="note-row">
+                  <span class="note-type">MIDDLE</span>
+                  <span class="note-value" id="note-middle">Clary Sage, Cypriol</span>
+                </div>
+                <div class="note-row">
+                  <span class="note-type">BASE</span>
+                  <span class="note-value" id="note-base">Amber, Musk, White Wood</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Panel: Purchasing & Collection Carousel -->
+          <div class="shop-action-panel">
+            
+            <!-- Dynamic Sync Top bar -->
+            <div class="shop-top-bar">
+              <div class="lang-selector-bar">
+                <button class="lang-btn active" data-lang="ko">한국어</button>
+                <button class="lang-btn" data-lang="en">ENGLISH</button>
+                <button class="lang-btn" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="ja">日本語</button>
+              </div>
+              
+              <!-- Luxury Shopping Cart Button -->
+              <button class="cart-toggle-btn" id="btn-cart-toggle" aria-label="Open Shopping Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span class="cart-badge" id="cart-count">0</span>
+              </button>
+            </div>
+
+            <!-- Size Selection & Price section -->
+            <div class="shop-pricing-section text-transition">
+              <div class="selector-section">
+                <span class="section-label" data-i18n="label_size">용량 선택</span>
+                <div class="size-selector-group">
+                  <button class="size-btn active" data-size="10">10ml</button>
+                  <button class="size-btn" data-size="50">50ml</button>
+                  <button class="size-btn" data-size="100">100ml</button>
+                </div>
+              </div>
+
+              <div class="price-section">
+                <span class="price-currency">₩</span>
+                <span class="price-value" id="shop-price">38,000</span>
+              </div>
+
+              <button class="btn btn-primary" id="btn-add-to-cart">
+                <span class="btn-text" data-i18n="btn_add_to_cart">장바구니 담기</span>
+                <div class="btn-glow"></div>
+              </button>
+            </div>
+
+            <!-- Horizontal Perfume Carousel slider -->
+            <div class="carousel-section">
+              <span class="section-label" data-i18n="label_collection">컬렉션 둘러보기</span>
+              <div class="perfume-carousel" id="perfume-carousel">
+                <!-- Carousel items loaded dynamically via JS -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slide-out Cart Panel -->
+        <div class="cart-panel" id="cart-panel">
+          <div class="cart-header">
+            <h3 class="cart-title" data-i18n="cart_title">장바구니</h3>
+            <button class="cart-close-btn" id="btn-cart-close" aria-label="Close Cart">✕</button>
+          </div>
+          
+          <div class="cart-items-wrapper" id="cart-items-list">
+            <!-- Empty state or items list -->
+            <div class="cart-empty" id="cart-empty-message">
+              <span data-i18n="cart_empty">장바구니가 비어 있습니다.</span>
+            </div>
+          </div>
+
+          <div class="cart-footer">
+            <div class="cart-total-row">
+              <span class="total-label" data-i18n="cart_total">합계</span>
+              <span class="total-price" id="cart-total-value">₩0</span>
+            </div>
+            <button class="btn btn-primary btn-checkout-action" id="btn-checkout">
+              <span class="btn-text" data-i18n="btn_checkout">결제하기</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cart Backdrop -->
+        <div class="cart-backdrop" id="cart-backdrop"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Sleek Alert/Notification Modal -->
+  <div class="notification-modal" id="alert-modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <div class="modal-brand">TAMBURINS</div>
+      <div class="modal-message" id="modal-msg">로그인에 성공했습니다.</div>
+      <button class="modal-close-btn" id="modal-close" data-i18n="modal_close">확인</button>
+    </div>
+  </div>
+
+  <!-- Checkout Success Modal Simulator -->
+  <div class="checkout-modal" id="checkout-modal">
+    <div class="checkout-backdrop"></div>
+    <div class="checkout-card">
+      <div class="checkout-brand">TAMBURINS</div>
+      
+      <!-- Checkout States (Processing / Success) -->
+      <div class="checkout-state" id="state-processing">
+        <div class="spinner"></div>
+        <p class="checkout-message" data-i18n="checkout_processing">결제를 처리 중입니다. 잠시만 기다려주세요...</p>
+      </div>
+
+      <div class="checkout-state active-state" id="state-success" style="display: none;">
+        <div class="success-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h4 class="success-title" data-i18n="checkout_success_title">주문 완료</h4>
+        <p class="success-subtitle" data-i18n="checkout_success_subtitle">주문이 성공적으로 접수되었습니다. 아래의 영수증을 확인해 주십시오.</p>
+        
+        <!-- Simulated Receipt -->
+        <div class="receipt-container">
+          <div class="receipt-header">
+            <span>TAMBURINS KIOSK</span>
+            <span id="receipt-date">2026.05.31 22:00</span>
+          </div>
+          <div class="receipt-divider">--------------------------------</div>
+          <div class="receipt-items" id="receipt-items-list">
+            <!-- Items injected by JS -->
+          </div>
+          <div class="receipt-divider">--------------------------------</div>
+          <div class="receipt-total">
+            <span data-i18n="receipt_total">총 결제 금액</span>
+            <span id="receipt-total-value">₩126,000</span>
+          </div>
+        </div>
+
+        <p class="checkout-auto-close"><span id="close-timer">10</span><span data-i18n="checkout_timer_text">초 후 자동으로 초기 로그인 화면으로 이동합니다.</span></p>
+        <button class="modal-close-btn" id="btn-checkout-done" data-i18n="btn_checkout_done">시작 화면으로</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
